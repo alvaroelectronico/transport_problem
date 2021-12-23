@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<Page Version="4000" TimeStamp="2020-03-19 18:34:45">
+	<PageEditSize Type="Inherited" />
+	<ProjectUUID>A97FA7BC-A036-440C-9597-6FD3584E375D</ProjectUUID>
+	<TemplatesTabOrderPosition>1</TemplatesTabOrderPosition>
+	<Background Inherited="true" />
+	<PageObject Type="Table">
+		<Location top="72" left="18" bottom="186" right="474" />
+		<TabOrder>7</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<RowIndentation>3</RowIndentation>
+		<ExplicitIdentifier>
+			<Identifier>UnitTransportCost( p, c )</Identifier>
+			<FirstColumn>1</FirstColumn>
+			<NumberFormat Width="4" Decimals="0" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>Supply( p )</Identifier>
+			<FirstColumn>1</FirstColumn>
+			<NumberFormat Width="5" Decimals="1" />
+		</ExplicitIdentifier>
+		<ExplicitIdentifier>
+			<Identifier>Demand( c )</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<NumberFormat Width="5" Decimals="1" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Bar Chart">
+		<Location top="192" left="18" bottom="468" right="210" />
+		<TabOrder>1</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<ColorScheme Number="0" />
+		<Title>true</Title>
+		<Legend>true</Legend>
+		<Y-Labels>true</Y-Labels>
+		<X-Labels>true</X-Labels>
+		<HorizontalGridLines>true</HorizontalGridLines>
+		<StatusLine>true</StatusLine>
+		<ExplicitIdentifier>
+			<Identifier>Supply( p )</Identifier>
+		</ExplicitIdentifier>
+		<FillWithColor>true</FillWithColor>
+	</PageObject>
+	<PageObject Type="Bar Chart">
+		<Location top="192" left="222" bottom="468" right="474" />
+		<TabOrder>2</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<ColorScheme Number="0" />
+		<Title>true</Title>
+		<Legend>true</Legend>
+		<Y-Labels>true</Y-Labels>
+		<X-Labels>true</X-Labels>
+		<HorizontalGridLines>true</HorizontalGridLines>
+		<StatusLine>true</StatusLine>
+		<ExplicitIdentifier>
+			<Identifier>Demand( c )</Identifier>
+		</ExplicitIdentifier>
+		<FillWithColor>true</FillWithColor>
+	</PageObject>
+	<PageObject Type="Table">
+		<Location top="72" left="486" bottom="144" right="900" />
+		<TabOrder>3</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<RowIndentation>3</RowIndentation>
+		<ExplicitIdentifier>
+			<Identifier>Transport( p, c )</Identifier>
+			<FirstColumn>1</FirstColumn>
+			<NumberFormat Width="5" Decimals="1" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Bar Chart">
+		<Location top="192" left="486" bottom="462" right="900" />
+		<TabOrder>4</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<ColorScheme Number="0" />
+		<Title>true</Title>
+		<Legend>true</Legend>
+		<Y-Labels>true</Y-Labels>
+		<X-Labels>true</X-Labels>
+		<HorizontalGridLines>true</HorizontalGridLines>
+		<StatusLine>true</StatusLine>
+		<ExplicitIdentifier>
+			<Identifier>Transport( p, c )</Identifier>
+		</ExplicitIdentifier>
+		<Stacked>true</Stacked>
+		<FillWithColor>true</FillWithColor>
+	</PageObject>
+	<PageObject Type="Table">
+		<Location top="150" left="726" bottom="180" right="900" />
+		<TabOrder>5</TabOrder>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<Border Style="InShadow" Width="2" MarginTop="5" MarginRight="5" MarginBottom="5" MarginLeft="5" />
+		<BackgroundColor RGB="#ffffff" />
+		<RowIndentation>3</RowIndentation>
+		<ExplicitIdentifier>
+			<Identifier>TotalTransportCost</Identifier>
+			<FirstColumn>0</FirstColumn>
+			<NumberFormat Width="7" Decimals="0" />
+		</ExplicitIdentifier>
+	</PageObject>
+	<PageObject Type="Button">
+		<Location top="12" left="486" bottom="60" right="900" />
+		<TabOrder>6</TabOrder>
+		<LeaveOnEnter>false</LeaveOnEnter>
+		<ButtonType>Text</ButtonType>
+		<Title>"Get Min. Cost Plan"</Title>
+		<Font GUID="00000000-0000-0000-0000-000000000001" Name="Main Font" />
+		<ActionSequence>
+			<Action Type="Run">
+				<RunWhat>SpecificProcecure</RunWhat>
+				<Procedure>MainExecution</Procedure>
+				<AbortOnError>true</AbortOnError>
+			</Action>
+		</ActionSequence>
+	</PageObject>
+	<PageObject Type="Text">
+		<Location top="18" left="108" bottom="54" right="354" />
+		<StaticText>Beer transportation</StaticText>
+		<Alignment>Center</Alignment>
+		<Font GUID="05BDB90F-82FF-45A1-83C3-6539641ECDE1" Name="Titulo" />
+		<TextColor RGB="#000000" />
+	</PageObject>
+	<UsedReferences>
+		<Model>
+			<Symbol>Supply</Symbol>
+			<Symbol>Demand</Symbol>
+			<Symbol>UnitTransportCost</Symbol>
+			<Symbol>Transport</Symbol>
+			<Symbol>TotalTransportCost</Symbol>
+			<Symbol>MainExecution</Symbol>
+			<Symbol>p</Symbol>
+			<Symbol>c</Symbol>
+		</Model>
+	</UsedReferences>
+</Page>

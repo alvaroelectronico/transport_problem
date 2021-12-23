@@ -1,0 +1,130 @@
+## ams_version=1.0
+
+Model Main_tutorial_principiantes {
+    Set Plantas {
+        Index: p;
+    }
+    Set Clientes {
+        Index: c;
+    }
+    Parameter Oferta {
+        IndexDomain: p;
+    }
+    Parameter Demanda {
+        IndexDomain: c;
+    }
+    Parameter CosteUnitarioTransporte {
+        IndexDomain: (p,c);
+    }
+    Variable Transporte {
+        IndexDomain: (p,c);
+        Range: nonnegative;
+        Property: ReducedCost, CoefficientRange;
+    }
+    Variable CosteTotalTransporte {
+        Range: free;
+        Definition: {
+            sum((p,c), CosteUnitarioTransporte(p, c)*
+            Transporte(p, c))
+        }
+    }
+    Constraint RestriccionOferta {
+        IndexDomain: p;
+        Property: ShadowPrice, RightHandSideRange;
+        Definition: sum(c, Transporte(p, c))<=Oferta(p);
+    }
+    Constraint RestriccionDemanda {
+        IndexDomain: c;
+        Property: ShadowPrice, RightHandSideRange;
+        Definition: sum(p, Transporte(p, c))>=Demanda(c);
+    }
+    MathematicalProgram PlanMenorCoste {
+        Objective: CosteTotalTransporte;
+        Direction: minimize;
+        Constraints: AllConstraints;
+        Variables: AllVariables;
+        Type: Automatic;
+    }
+    DeclarationSection Sensibilidad {
+        Parameter PrecioSombraOferta {
+            IndexDomain: p;
+            Definition: RestriccionOferta(p).shadowprice;
+        }
+        Parameter PrecioSombraDemanda {
+            IndexDomain: c;
+            Definition: RestriccionDemanda(c).shadowprice;
+        }
+        Parameter RHSOfertaInf {
+            IndexDomain: p;
+            Definition: RestriccionOferta.SmallestRightHandSide(p);
+        }
+        Parameter RHSOfertaSup {
+            IndexDomain: p;
+            Definition: RestriccionOferta.LargestRightHandSide(p);
+        }
+        Parameter RHSDemandaInf {
+            IndexDomain: c;
+            Definition: RestriccionDemanda.SmallestRightHandSide(c);
+        }
+        Parameter RHSDemandaSup {
+            IndexDomain: c;
+            Definition: RestriccionDemanda.LargestRightHandSide(c);
+        }
+        Parameter CosteReducidoTransp {
+            IndexDomain: (p,c);
+            Definition: Transporte.ReducedCost(p, c);
+        }
+        Parameter CoeffTransporteInf {
+            IndexDomain: (p,c);
+            Definition: Transporte.SmallestCoefficient(p, c);
+        }
+        Parameter CoeffTransporteSup {
+            IndexDomain: (p,c);
+            Definition: Transporte.LargestCoefficient(p, c);
+        }
+        Parameter EnviosPlanta {
+            IndexDomain: p;
+            Definition: sum(c, Transporte(p, c));
+        }
+        Parameter RecibidoCliente {
+            IndexDomain: c;
+            Definition: sum(p, Transporte(p, c));
+        }
+    }
+    Procedure MainInitialization {
+        Comment: "Add initialization statements here that do NOT require any library being initialized already.";
+    }
+    Procedure PostMainInitialization {
+        Comment: {
+            "Add initialization statements here that require that the libraries are already initialized properly,
+            or add statements that require the Data Management module to be initialized."
+        }
+    }
+    Procedure MainExecution {
+        Body: {
+            ShowProgressWindow;
+            solve PlanMenorCoste;
+        }
+    }
+    Procedure PreMainTermination {
+        Body: {
+            return DataManagementExit();
+        }
+        Comment: {
+            "Add termination statements here that require all libraries to be still alive.
+            Return 1 if you allow the termination sequence to continue.
+            Return 0 if you want to cancel the termination sequence."
+        }
+    }
+    Procedure MainTermination {
+        Body: {
+            return 1;
+        }
+        Comment: {
+            "Add termination statements here that do not require all libraries to be still alive.
+            Return 1 to allow the termination sequence to continue.
+            Return 0 if you want to cancel the termination sequence.
+            It is recommended to only use the procedure PreMainTermination to cancel the termination sequence and let this procedure always return 1."
+        }
+    }
+}

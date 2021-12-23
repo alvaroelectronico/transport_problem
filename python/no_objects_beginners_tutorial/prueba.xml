@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<quiz>
+  <!--Generated from Python-->
+  <question type="category">
+    <category>
+      <text>Pruebas pyhon</text>
+    </category>
+    <info format="html">
+      <text/>
+    </info>
+  </question>
+  <question type="numerical">
+    <name>
+      <text>Preg1</text>
+    </name>
+    <questiontext format="html">
+      <text>Enun1</text>
+    </questiontext>
+    <answer fraction="100" fomrat="moodle_auto_format">
+      <text>100</text>
+      <tolerance>1</tolerance>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>Pruebas pyhon</text>
+    </category>
+    <info format="html">
+      <text/>
+    </info>
+  </question>
+  <question type="numerical">
+    <name>
+      <text>Preg2</text>
+    </name>
+    <questiontext format="html">
+      <text>Enun2</text>
+    </questiontext>
+    <answer fraction="100" fomrat="moodle_auto_format">
+      <text>200</text>
+      <tolerance>1</tolerance>
+    </answer>
+  </question>
+</quiz>

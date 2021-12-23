@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TemplateManager>
+	<Page Name="Results" PageGUID="7F92376A-E800-424F-BF96-38EA12526B7D" />
+	<Page Name="Sensibility" PageGUID="2A8B7325-C87C-4EF1-A4A3-7467B4F3FED3" />
+	<Page Name="All Data Pages" PageGUID="3A1EC39E-E974-49A8-9E11-CA1995C21FB7" />
+	<Page Name="[Data Page] PrecioSombraOferta" PageGUID="2FE4BD21-4736-4608-B1E0-2E97DE72318C" />
+</TemplateManager>

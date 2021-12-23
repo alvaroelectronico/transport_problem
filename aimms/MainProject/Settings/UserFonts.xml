@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<UserFonts>
+	<UserFont Name="Main Font" FaceName="Arial" PointSize="80" UUID="00000000-0000-0000-0000-000000000001" />
+	<UserFont Name="Titulo" FaceName="Arial" PointSize="160" Bold="true" UUID="05BDB90F-82FF-45A1-83C3-6539641ECDE1" InternalID="1" />
+	<UserFont Name="Titulo2" FaceName="Arial" PointSize="120" Bold="true" UUID="9F6DDB38-0829-4312-AC91-C3F3ED21586F" InternalID="2" />
+</UserFonts>

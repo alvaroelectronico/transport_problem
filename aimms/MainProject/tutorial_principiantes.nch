@@ -1,0 +1,8 @@
+* The timestamps in this namechange file are stored in Coordinated universal time (UTC).
+"RestriccionOfert" "RestriccionOferta" "2019-06-01 09:09:54"
+"Demand" "Demanda" "2019-06-01 09:10:43"
+"Copy_PrecioSombraOferta" "PrecioSombraDemanda" "2019-06-08 08:44:23"
+"Copy_RHSOfertaInf" "RHSOfertaSup" "2019-06-08 08:57:19"
+"Copy_RHSOfertaInf" "RHSDemandaInf" "2019-06-08 08:57:52"
+"Copy_RHSDemandaInf" "RHSDemandaSup" "2019-06-08 08:58:16"
+"Copy_CoeffTransporteInf" "CoeffTransporteSup" "2019-06-08 09:18:35"
