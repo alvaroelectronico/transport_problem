@@ -10,7 +10,7 @@ The problem consists in obtaining the transportation plan with the minimum cost 
 
 The following tables provide the relevant input data:
 
-Unit trasnport costs:
+Unit transport costs:
 
 > Plants/Customers| Leeds  | Bristol  | Liverpool  | London  | Soutampton  | 
 >---        | ---| ---| ---| ---| ---| 
